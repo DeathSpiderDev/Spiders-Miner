@@ -50,4 +50,5 @@ make -j$(nproc)
 
 echo "Build process completed!"
 echo "You are now in the $(pwd) directory"
+echo "Now Send Your Xmrig Token"
 exec bash  # This keeps the user in the xmrig/build directory after script exits
