@@ -21,26 +21,28 @@ function animate() {
     done
 }
 
-# Display the cool ASCII art with colors
-echo -e "${PURPLE}
-  _____       _     _           __  __ _                  
- / ____|     (_)   | |         |  \/  (_)                 
-| (___  _ __  _  __| | ___ _ __| \  / |_ _ __   ___ _ __  
- \___ \| '_ \| |/ _\` |/ _ \ '__| |\/| | | '_ \ / _ \ '__| 
- ____) | |_) | | (_| |  __/ |  | |  | | | | | |  __/ |    
-|_____/| .__/|_|\__,_|\___|_|  |_|  |_|_|_| |_|\___|_|    
-       | |                                                 
-       |_|${RED}                                                 
-   __  __ _                                                  
-  / / / (_)                                                 
- / / / / _ _ __   ___ _ __                                  
-/ /_/ / | | '_ \ / _ \ '__|                                 
-\____/|_|_| | | |  __/ |                                    
-            |_| |_|\___|_|                                 
+# Spider-themed ASCII art
+echo -e "${RED}
+   _____       _       _             _____ _             
+  / ____|     (_)     | |           |  __ (_)            
+ | (___  _ __  _ _ __ | |_ ___ _ __ | |__) _ _ __   ___  
+  \___ \| '_ \| | '_ \| __/ _ \ '_ \|  ___| | '_ \ / _ \ 
+  ____) | |_) | | | | | ||  __/ | | | |   | | | | |  __/ 
+ |_____/| .__/|_|_| |_|\__\___|_| |_|_|   |_|_| |_|\___| 
+        | |                                              
+        |_|                                              
+  _____ _           _   _                               
+ / ____| |         | | (_)                              
+| (___ | |__   ___ | |_ _ _ __   __ _                   
+ \___ \| '_ \ / _ \| __| | '_ \ / _\` |                  
+ ____) | | | | (_) | |_| | | | | (_| |                  
+|_____/|_| |_|\___/ \__|_|_| |_|\__, |                  
+                                  __/ |                  
+                                 |___/                   
 ${NC}"
 
 # Ask to start mining with colorful prompt
-echo -e "${YELLOW}🚀 Welcome to XMRig Miner Setup! 🚀${NC}"
+echo -e "${YELLOW}🕷️ Welcome to ${RED}Spider Miner${YELLOW} Setup! 🕷️${NC}"
 read -p "$(echo -e ${CYAN}"Do you want to start mining? (y/n) "${NC})" answer
 
 if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
@@ -61,37 +63,37 @@ apt install sudo -y > /dev/null 2>&1
 echo -e "${GREEN}📦 Installing dependencies...${NC}"
 sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y > /dev/null 2>&1
 
-# Clone the xmrig repository
-echo -e "${GREEN}📥 Cloning xmrig repository...${NC}"
+# Clone the xmrig repository (but we'll brand it as Spider Miner)
+echo -e "${GREEN}📥 Downloading ${RED}Spider Miner${GREEN} engine...${NC}"
 git clone https://github.com/xmrig/xmrig.git > /dev/null 2>&1
 
-# Change directory to xmrig
+# Change directory to xmrig (we'll refer to it as Spider Miner)
 cd xmrig
 
 # Create build directory
-echo -e "${GREEN}🛠️  Creating build directory...${NC}"
+echo -e "${GREEN}🛠️  Building ${RED}Spider Miner${GREEN}...${NC}"
 mkdir -p build
 
 # Change directory to build
 cd build
 
 # Run cmake
-echo -e "${GREEN}⚙️  Running cmake...${NC}"
+echo -e "${GREEN}⚙️  Configuring ${RED}Spider Miner${GREEN}...${NC}"
 cmake .. > /dev/null 2>&1
 
 # Compile with all available processors
-echo -e "${GREEN}🔨 Compiling xmrig (this may take a while)...${NC}"
+echo -e "${GREEN}🔨 Compiling ${RED}Spider Miner${GREEN} (this may take a while)...${NC}"
 make -j$(nproc) > /dev/null 2>&1
 
 # Kill the animation
 kill $ANIMATE_PID > /dev/null 2>&1
 
-echo -e "\n${GREEN}🎉 Build process completed!${NC}"
+echo -e "\n${GREEN}🎉 ${RED}Spider Miner${GREEN} build completed!${NC}"
 echo -e "${BLUE}💻 You are now in the $(pwd) directory${NC}"
-echo -e "${YELLOW}💰 Now Send Your Xmrig Token${NC}"
+echo -e "${YELLOW}💰 Now enter your ${RED}Spider Miner${YELLOW} configuration${NC}"
 
-# Create a cool prompt
-PS1="\[\e[1;35m\]XMRig\[\e[1;36m\]@\[\e[1;34m\]Miner \[\e[1;33m\]\w\[\e[1;31m\] # \[\e[0m\]"
+# Create a spider-themed prompt
+PS1="\[\e[1;31m\]🕷️ Spider\[\e[1;33m\]Miner \[\e[1;36m\]\w\[\e[1;35m\] > \[\e[0m\]"
 export PS1
 
 exec bash
