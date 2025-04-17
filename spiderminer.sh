@@ -1,7 +1,17 @@
 #!/bin/bash
 
 # Display the initial text
-echo "Spiders Miner"
+echo "
+  _____       _     _           __  __ _                  
+ / ____|     (_)   | |         |  \/  (_)                 
+| (___  _ __  _  __| | ___ _ __| \  / |_ _ __   ___ _ __  
+ \___ \| '_ \| |/ _\` |/ _ \ '__| |\/| | | '_ \ / _ \ '__| 
+ ____) | |_) | | (_| |  __/ |  | |  | | | | | |  __/ |    
+|_____/| .__/|_|\__,_|\___|_|  |_|  |_|_|_| |_|\___|_|    
+       | |                                                 
+       |_|                                                 
+Miner
+"
 
 # Ask to start mining
 read -p "Do you want to start mining? (y/n) " answer
