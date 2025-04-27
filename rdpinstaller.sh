@@ -33,16 +33,4 @@ sudo apt-get update
 echo "Installing Firefox ESR..."
 sudo apt-get install firefox-esr -y
 
-echo "Adding Opera browser repository..."
-sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
-
-echo "Adding Opera GPG key..."
-sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
-
-echo "Updating package list again..."
-sudo apt-get update
-
-echo "Installing Opera browser..."
-sudo apt-get install opera -y
-
 echo "All installations are complete!"
