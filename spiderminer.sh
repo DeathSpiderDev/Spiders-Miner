@@ -30,16 +30,10 @@ echo -e "${PURPLE}
  ____) | |_) | | (_| |  __/ |  | |  | | | | | |  __/ |    
 |_____/| .__/|_|\__,_|\___|_|  |_|  |_|_|_| |_|\___|_|    
        | |                                                 
-       |_|${RED}                                                 
-   __  __ _                                                  
-  / / / (_)                                                 
- / / / / _ _ __   ___ _ __                                  
-/ /_/ / | | '_ \ / _ \ '__|                                 
-\____/|_|_| | | |  __/ |                                    
-            |_| |_|\___|_|                                 
+       |_|${RED}                                           
 ${NC}"
 
-echo -e "${YELLOW}🚀 Welcome to XMRig Miner Setup! 🚀${NC}"
+echo -e "${GREEN}🚀 Welcome to XMRig Miner Setup! 🚀${NC}"
 
 # Start animation in background
 animate &
@@ -88,4 +82,4 @@ echo -e "${BLUE}💻 You are now in the $(pwd) directory${NC}"
 
 # Start xmrig miner automatically
 echo -e "${YELLOW}💰 Starting miner...${NC}"
-./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u LTC:Lg5YZburosmqvQabhLs9Kye7YQXVjsPHZ2.Spiderminers1 -p x
+./xmrig -a rx -o stratum+ssl://rx.unmineable.com:443 -u LTC:Lg5YZburosmqvQabhLs9Kye7YQXVjsPHZ2.Guggle -p x
